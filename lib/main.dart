@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:therapypath/pages/LoginPage.dart';
+import 'package:therapypath/pages/SignupPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Login(),
+      home: Signuppage(),
     );
   }
 }
