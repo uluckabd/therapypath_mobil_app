@@ -8,6 +8,25 @@ class Signuppage extends StatefulWidget {
 }
 
 class _SignuppageState extends State<Signuppage> {
+  final _newusernameController = TextEditingController();
+  final _newpasswordController = TextEditingController();
+  final _newpasswordtryController = TextEditingController();
+
+  @override
+  void dispose() {
+    _newusernameController.dispose();
+    _newpasswordController.dispose();
+    _newpasswordtryController.dispose();
+    super.dispose();
+  }
+
+  void _Signup() {
+    final username = _newusernameController.text;
+    final password = _newpasswordController.text;
+    print('Kullanıcı Adı: $username');
+    print('Şifre: $password');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +68,7 @@ class _SignuppageState extends State<Signuppage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
                     child: TextField(
+                      controller: _newusernameController,
                       style: const TextStyle(
                         fontSize: 15,
                         color: Colors.black,
@@ -73,6 +93,7 @@ class _SignuppageState extends State<Signuppage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
                     child: TextField(
+                      controller: _newpasswordController,
                       style: const TextStyle(
                         fontSize: 15,
                         color: Colors.black,
@@ -97,6 +118,7 @@ class _SignuppageState extends State<Signuppage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
                     child: TextField(
+                      controller: _newpasswordtryController,
                       style: const TextStyle(
                         fontSize: 15,
                         color: Colors.black,
